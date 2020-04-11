@@ -58,21 +58,27 @@
       -o-background-size: cover;
       background-position: center 0;
     }
-      #chaolianjie{
+      .chaolianjie{
         margin:auto;
-        width:400px;
+        width:600px;
         height: 200px;
       }
-      #chaolianjie .chao{
-        width:150px;
+      .chaolianjie .chao{
+        width:250px;
         height:190px;
         padding-right:25px;
         padding-left:25px;
         padding-bottom: 5px;
         padding-top:25px;
-        border-right:1px dashed black;
         float: left;
       }
+      .chaolianjie .chao.first{
+        padding-left:0;
+        }
+        .chaolianjie .chao.second{
+        padding-right:0;
+        border:0;
+        }
       .poweredby{
         width:300px;
         height:100px;
@@ -100,24 +106,22 @@
          <div style="text-align:center" class="panel-heading" ><h1>欢迎来到桜的小屋qwq！</h1></div>
          <div style="text-align:center;" >本页面正在施工QAQ敬请期待qwq</div>
          <div style="text-align:center;">本页面预计完成时间:2020/13/32</div>
-         <div style="text-align: center;"><a href=".\xinwangye\xiedianshenme.html">点击进入另一个网页qwq</a></div>
          </div>
     </div>
-   </div>
-      <p style="color:blue;text-align: center;">点击下面图片进入我的b站主页qwq</p>
-   <a href="https://space.bilibili.com/29058270" target="_blank">
-      <div align=center>
-       <img border="0" src=".\sakura.png" width="40" height="50">
-     </div>
-    </a>
     <div id="timeShow" class="time1" style="color:red"></div>
     <div class="chaolianjie">
-      <div class="chao">
-
+      <div class="chao first">
+        <a href=".\xinwangye\xiedianshenme.html" style="text-align: center;color:red">点击进入另一个网页qwq</a>
       </div>
-      <div class="chao">
-
+      <div class="chao second">
+      <p style="color:blue;text-align: center;">点击进入我的b站主页qwq</p>
+      <a href="https://space.bilibili.com/29058270" target="_blank">
+        <div align=center>
+          <img border="0" src=".\sakura.png" width="40" height="50">
+        </div>
+       </a>
       </div>
+    </div>
   <p class="poweredby" style="text-align: center;color:pink">powered by SakuraQWQ</p>
 </body>
 </html>
