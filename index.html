@@ -26,25 +26,57 @@
  </script>
 <head>
   <style>
-    .time1{width:100%; height:50px;  line-height:50px; text-align:center;position: relative;}
-  </style>
-  <style>
-      .beijing{
-        position:fixed;
-        top: 0;
-        left: 0;
-        width:100%;
-        height:100%;
-        min-width: 1000px;
-        z-index:-10;
-        zoom: 1;
-        background-color: #fff;
-        background: url(beijing1.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        -webkit-background-size: cover;
-        -o-background-size: cover;
-        background-position: center 0;
+    *{
+      margin:0;padding: 0;
+    }
+    .zhenggehuabu{
+      width:100%;
+      height:850px;
+      margin:auto;
+    }
+    .time1{
+      width:100%;
+      height:50px;
+      line-height:50px;
+      text-align:center;
+      position: relative;
+    }
+    .beijing{
+      position:fixed;
+      top: 0;
+      left: 0;
+      width:100%;
+      height:100%;
+      min-width: 1000px;
+      z-index:-10;
+      zoom: 1;
+      background-color: #fff;
+      background: url(beijing1.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      -webkit-background-size: cover;
+      -o-background-size: cover;
+      background-position: center 0;
+    }
+      #chaolianjie{
+        margin:auto;
+        width:400px;
+        height: 200px;
+      }
+      #chaolianjie .chao{
+        width:150px;
+        height:190px;
+        padding-right:25px;
+        padding-left:25px;
+        padding-bottom: 5px;
+        padding-top:25px;
+        border-right:1px dashed black;
+        float: left;
+      }
+      .poweredby{
+        width:300px;
+        height:100px;
+        margin:auto;
       }
   </style>
   </head>
@@ -55,29 +87,37 @@
 <script src="//cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
-<body>
-  <div class="beijing"></div>
+<body style="margin:0">
+ <div class="zhenggehuabu">
+   <div class="beijing"></div>
 
-  <div align=center>
-        <img src=".\sakura.png" alt="photo" width="200" height="250">
-  </div>
-	<div class="container" style="margin-top:0%;">
-  		<div class="jumbotron">
-        <div class="panel panel-success">
-        <div style="text-align:center" class="panel-heading" ><h1>欢迎来到桜的小屋qwq！</h1></div>
-        </div>
-        <div style="text-align:center;" >本页面正在施工QAQ敬请期待qwq</div>
-        <div style="text-align:center;">本页面预计完成时间:2020/13/32</div>
-        <div style="text-align: center;"><a href=".\xinwangye\xiedianshenme.html">点击进入另一个网页qwq</a></div>
-        </div>
-  </div>
-    <p style="color:blue;text-align: center;">点击下面图片进入我的b站主页qwq</p>
-  <a href="https://space.bilibili.com/29058270" target="_blank">
     <div align=center>
-      <img borde="0" src=".\sakura.png" width="40" height="50">
+          <img src=".\sakura.png" alt="photo" width="200" height="250">
     </div>
-  </a>
-  <div id="timeShow" class="time1" style="color:red"></div>
-  <p><h2>powered by sakura qwq</h2></p>
+  	<div class="container" style="margin-top:0%;">
+  	  <div class="jumbotron">
+        <div class="panel panel-success">
+         <div style="text-align:center" class="panel-heading" ><h1>欢迎来到桜的小屋qwq！</h1></div>
+         <div style="text-align:center;" >本页面正在施工QAQ敬请期待qwq</div>
+         <div style="text-align:center;">本页面预计完成时间:2020/13/32</div>
+         <div style="text-align: center;"><a href=".\xinwangye\xiedianshenme.html">点击进入另一个网页qwq</a></div>
+         </div>
+    </div>
+   </div>
+      <p style="color:blue;text-align: center;">点击下面图片进入我的b站主页qwq</p>
+   <a href="https://space.bilibili.com/29058270" target="_blank">
+      <div align=center>
+       <img border="0" src=".\sakura.png" width="40" height="50">
+     </div>
+    </a>
+    <div id="timeShow" class="time1" style="color:red"></div>
+    <div class="chaolianjie">
+      <div class="chao">
+
+      </div>
+      <div class="chao">
+
+      </div>
+  <p class="poweredby" style="text-align: center;color:pink">powered by SakuraQWQ</p>
 </body>
 </html>
