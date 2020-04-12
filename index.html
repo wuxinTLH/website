@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
   <script language="javascript">
     var t = null;
    t = setTimeout(time,1000);//开始执行
@@ -62,16 +62,16 @@
     }
       .chaolianjie{ 
         margin:auto;
-        width:600px;
+        width:1000px;
         height: 200px;
       }
       .chaolianjie .chao{
-        width:250px;
-        height:190px;
-        padding-right:25px;
-        padding-left:25px;
-        padding-bottom: 5px;
-        padding-top:25px;
+        width:320px;
+        height:180px;
+        padding-right:10px;
+        padding-left:10px;
+        padding-bottom: 10px;
+        padding-top:10px;
         float: left;
       }
       .chaolianjie .chao.first{
@@ -102,6 +102,80 @@
         padding-right: 0;
         border:0;
       }
+      .snow-container {
+      position: absolute;
+      height: 800px;
+      width: 100%;
+      max-width: 100%;
+      top: 0;
+      overflow: hidden;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .snow {
+        display: block;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        pointer-events: none;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+        -webkit-animation: snow linear infinite;
+        animation: snow linear infinite;
+    }
+    .snow.foreground {
+        background-image: url("https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-large-075d267ecbc42e3564c8ed43516dd557.png");
+        -webkit-animation-duration: 15s;
+          animation-duration: 15s;
+    }
+    .snow.foreground.layered {
+        -webkit-animation-delay: 7.5s;
+          animation-delay: 7.5s;
+    }
+    .snow.middleground {
+        background-image: url(https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-medium-0b8a5e0732315b68e1f54185be7a1ad9.png);
+        -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+    }
+    .snow.middleground.layered {
+        -webkit-animation-delay: 10s;
+          animation-delay: 10s;
+    }
+    .snow.background {
+        background-image: url(https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-small-1ecd03b1fce08c24e064ff8c0a72c519.png);
+        -webkit-animation-duration: 30s;
+          animation-duration: 30s;
+    }
+    .snow.background.layered {
+        -webkit-animation-delay: 15s;
+          animation-delay: 15s;
+    }
+
+@-webkit-keyframes snow {
+  0% {
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(15%, 100%, 0);
+            transform: translate3d(15%, 100%, 0);
+  }
+}
+
+    @keyframes snow {
+        0% {
+            -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+        }
+        100% {
+            -webkit-transform: translate3d(15%, 100%, 0);
+            transform: translate3d(15%, 100%, 0);
+        }
+    }
       .poweredby{
         width:300px;
         height:100px;
@@ -119,7 +193,6 @@
 <body style="margin:0">
  <div class="zhenggehuabu">
    <div class="beijing"></div>
-
     <div align=center>
           <img src=".\sakura.png" alt="photo" width="200" height="250">
     </div>
@@ -127,8 +200,10 @@
   	  <div class="jumbotron">
         <div class="panel panel-success">
          <div style="text-align:center" class="panel-heading" ><h1>欢迎来到桜的小屋qwq！</h1></div>
-         <div style="text-align:center;" >本页面正在施工QAQ敬请期待qwq</div>
-         <div style="text-align:center;">本页面预计完成时间:2020/13/32</div>
+         <div style="text-align:center;" >
+          <span>本页面正在施工qwq<br></span>
+          <span>预计于2077/13/32完成施工qwq</span>
+        </div>
          </div>
     </div>
     <div class="chaolianjie">
@@ -137,6 +212,14 @@
         <a href=".\xinwangye\xiedianshenme.html" >
           <div align=center>
           <img border="0" src=".\xinwangye\miaoda.gif" width="40" height="50">
+          </div>
+        </a>
+      </div>
+      <div class="chao">
+        <p style="color:snow;text-align:center">点击进入看雪台qwq</p>
+        <a href=".\xinwangye\xuehua.html">
+          <div align=center>
+            <img border="0" src=".\sakura.png" width="40" height="50">
           </div>
         </a>
       </div>
@@ -175,7 +258,16 @@
         </a>
       </div>
     </div>
-  <p class="poweredby" style="text-align: center;color:grey;height:0%;">powered by SakuraQWQ</p>
-  <div id="timeShow" class="time1" style="color:red"></div>
+  </div>
+    <div class="snow-container" style="Z-index:-10">
+    <div class="snow foreground"></div>
+    <div class="snow foreground layered"></div>
+    <div class="snow middleground"></div>
+    <div class="snow middleground layered"></div>
+    <div class="snow background"></div>
+    <div class="snow background layered"></div>
+  </div>
+  <p class="poweredby" style="text-align: center;color:grey;height:0% ;">powered by SakuraQWQ</p> 
+  <br><div id="timeShow" class="time1" style="color:red"></div>
 </body>
 </html>
