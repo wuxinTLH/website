@@ -1,87 +1,306 @@
-   (背景) <head>
-        <meta charset="UTF-8">
-        <title>背景图片设置</title>
-        <style>
-            .demo{
-                position:fixed;
-                top: 0;
-                left: 0;
-                width:100%;
-                height:100%;
-                min-width: 1000px;
-                z-index:-10;
-                zoom: 1;
-                background-color: #fff;
-                background: url(url);
-                background-repeat: no-repeat;
-                background-size: cover;
-                -webkit-background-size: cover;
-                -o-background-size: cover;
-                background-position: center 0;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="demo"></div>
-    </body>
-(音乐播放器)<body>
-  <audio controls autoplay="autoplay" loop="loop">
-    <source src="url" type="audio/mpeg" />
-      如果不播放，那就不能怪我惹qwq
-    </audio>
-(动态时间显示)<html>
-<script language="javascript">
-     var t = null;
-    t = setTimeout(time,1000);//开始执行
-    function time()
-    {
-       clearTimeout(t);//清除定时器
-       dt = new Date();
-var y=dt.getYear()+1900;
-var mm=dt.getMonth()+1;
-var d=dt.getDate();
-var weekday=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
-var day=dt.getDay();
+<!doctype html>
+<html lang="en">
+  <script language="javascript">
+    var t = null;
+   t = setTimeout(time,1000);//开始执行
+   function time()
+   {
+      clearTimeout(t);//清除定时器
+        dt = new Date();
+        var y=dt.getYear()+1900;
+        var mm=dt.getMonth()+1;
+        var d=dt.getDate();
+        var weekday=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+        var day=dt.getDay();
         var h=dt.getHours();
         var m=dt.getMinutes();
         var s=dt.getSeconds();
-if(h<10){h="0"+h;}
-if(m<10){m="0"+m;}
-if(s<10){s="0"+s;}
-        document.getElementById("timeShow").innerHTML =  "现在的时间为："+y+"年"+mm+"月"+d+"日"+weekday[day]+"      "+h+":"+m+":"+s+"";
+        if(h<10){h="0"+h;}
+        if(m<10){m="0"+m;}
+        if(s<10){s="0"+s;}
+       document.getElementById("timeShow").innerHTML = y+"年"+mm+"月"+d+"日"+weekday[day]+"      "+h+":"+m+":"+s+""+"qwq";
 
-        t = setTimeout(time,1000); //设定定时器，循环执行           
+       t = setTimeout(time,1000); //设定定时器，循环执行           
 
-    }
-  </script>
+   }
+ </script>
+ <script src="test.php"></script>
+ <script>document.write(a)</script>
 <head>
+  <link rel="shortcut icon" href="sakura.png">
   <style>
-    .time1{width:100%; height:50px; background:pink; line-height:50px; text-align:center;}
+    *{
+      margin:0;padding: 0;
+    }
+    .zhenggehuabu{
+      width:100%;
+      height:900px;
+      margin:auto;
+    }
+    .time1{
+      width:100%;
+      height:30px;
+      line-height:30px;
+      text-align:center;
+      position: relative;
+    }
+    .beijing{
+      position:fixed;
+      top: 0;
+      left: 0;
+      width:100%;
+      height:100%;
+      min-width: 1000px;
+      z-index:-10;
+      zoom: 1;
+      background-color: #fff;
+      background: url(beijing1.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      -webkit-background-size: cover;
+      -o-background-size: cover;
+      background-position: center 0;
+    }
+      .chaolianjie{ 
+        margin:auto;
+        width:1000px;
+        height: 200px;
+      }
+      .chaolianjie .chao{
+        width:320px;
+        height:180px;
+        padding-right:10px;
+        padding-left:10px;
+        padding-bottom: 10px;
+        padding-top:10px;
+        float: left;
+      }
+      .chaolianjie .chao.first{
+        padding-left:0;
+        }
+        .chaolianjie .chao.second{
+        padding-right:0;
+        border:0;
+        }
+        .chaolianjie2{ 
+        margin:auto;
+        width:1000px;
+        height: 100px;
+      }
+      .chaolianjie2 .chao2{
+        width:320px;
+        height:80px;
+        padding-right:10px;
+        padding-left:10px;
+        padding-bottom:10px;
+        padding-top:10px;
+        float:left;
+      }
+      .chaolianjie2 .chao2.first{
+        padding-left:0;
+      }
+      .chaolianjie2 .chao2.end{
+        padding-right: 0;
+        border:0;
+      }
+      .snow-container {
+      position: absolute;
+      height: 800px;
+      width: 100%;
+      max-width: 100%;
+      top: 0;
+      overflow: hidden;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .snow {
+        display: block;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        pointer-events: none;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+        -webkit-animation: snow linear infinite;
+        animation: snow linear infinite;
+    }
+    .snow.foreground {
+        background-image: url(./xinwnagye/1.png);
+        -webkit-animation-duration: 15s;
+          animation-duration: 15s;
+    }
+    .snow.foreground.layered {
+        -webkit-animation-delay: 7.5s;
+          animation-delay: 7.5s;
+    }
+    .snow.middleground {
+        background-image: url(./xinwangye/2.png);
+        -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+    }
+    .snow.middleground.layered {
+        -webkit-animation-delay: 10s;
+          animation-delay: 10s;
+    }
+    .snow.background {
+        background-image: url(./xinwangye/3.png);
+        -webkit-animation-duration: 30s;
+          animation-duration: 30s;
+    }
+    .snow.background.layered {
+        -webkit-animation-delay: 15s;
+          animation-delay: 15s;
+    }
+
+    @-webkit-keyframes snow {
+      0% {
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+      }
+      100% {
+        -webkit-transform: translate3d(15%, 100%, 0);
+        transform: translate3d(15%, 100%, 0);
+      }
+    }
+
+    @keyframes snow {
+        0% {
+            -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+        }
+        100% {
+            -webkit-transform: translate3d(15%, 100%, 0);
+            transform: translate3d(15%, 100%, 0);
+        }
+    }
+      .poweredby{
+        width:300px;
+        height:100px;
+        margin:auto;
+      }
   </style>
-</head>
+  </head>
 <meta http-equiv="Content-Type" content="text/html"/>
-<title>时间的动态显示</title>
-<body>
-<div id="timeShow" class="time1"></div>
+<meta charset="utf-8">
+<title>Sakura的小屋o(*￣▽￣*)o</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href=".\css\html.css">
+<script src="//cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body style="margin:0">
+ <div class="zhenggehuabu">
+   <div class="beijing"></div>
+    <div align=center>
+          <img src=".\sakura.png" alt="photo" width="200" height="250">
+    </div>
+  	<div class="container" style="margin-top:0%;">
+  	  <div class="jumbotron">
+        <div class="panel panel-success">
+         <div style="text-align:center" class="panel-heading" ><h1>欢迎来到桜的小屋qwq！</h1></div>
+         <div style="text-align:center;color:red" class="jieshao">
+          <span>我是桜QWQ<br></span>
+          <span>不知道该写点什么了,就在这介绍一下自己吧qaq<br></span>
+          <span>性别:你想是啥就是啥awa(无性恋)<br></span>
+          <span>喜欢rts类游戏,比如星际争霸qwq<br></span>
+          <span>FPS游戏也还行qwq<br></span>
+          <span>如果你喜欢星际啊,csgo啊,我们也许能一起玩呢qwq<br></span>
+          <span>目前我比较推荐的游戏呢,FF15(如果他是完全体的话awa)<br></span>
+          <span>下面呢,就是我的各种链接啦qwq有兴趣可以点进去qwp<br></span>
+          <span>由于网页是放在github上,所以只是个静态网站啦qwq</span>
+        </div>
+         </div>
+    </div>
+    <div class="chaolianjie">
+      <div class="chao first">
+        <p style="color:red;text-align: center;">点击进入洗脑台qwq</p>
+        <a href=".\xinwangye\xiedianshenme.html" >
+          <div align=center>
+          <img border="0" src=".\xinwangye\miaoda.gif" width="40" height="50">
+          </div>
+        </a>
+      </div>
+      <div class="chao">
+        <p style="color:snow;text-align:center">点击进入看雪台qwq</p>
+        <a href=".\xinwangye\xuehua.html">
+          <div align=center>
+            <img border="0" src=".\sakura.png" width="40" height="50">
+          </div>
+        </a>
+      </div>
+      <div class="chao second">
+      <p style="color:blue;text-align: center;">点击进入我的b站主页qwq</p>
+      <a href="https://space.bilibili.com/29058270" target="_blank">
+        <div align=center>
+          <img border="0" src=".\sakura.png" width="40" height="50">
+        </div>
+       </a>
+      </div>
+    </div>
+    <div class="chaolianjie2">
+      <div class="chao2 first">
+        <p style="text-align: center;color:pink;">点击添加steam好友记得开加速器qwq</p>
+        <a href="https://steamcommunity.com/profiles/76561198181620483/" target="_blank">
+            <div align=center>
+              <img src="steam.jfif" border="0" width="60" height="45">
+            </div>
+          </a>
+      </div>
+      <div class="chao2">
+        <p style="text-align: center;color:rgb(15, 228, 104);">点击进入直播间qwq</p>
+        <a href="https://live.bilibili.com/1945098/" target="_blank">
+          <div align=center>
+            <img src="bzhan.jfif" border="0" width="60" height="45">
+          </div>
+        </a>
+      </div>
+      <div class="chao2 end">
+        <p style="text-align: center;color:powderblue;">点击加粉丝群qwq</p>
+        <a href="https://jq.qq.com/?_wv=1027&k=5BnM3OM" target="_blank">
+          <div align=center>
+            <img border="0" src=".\sakura.png" width="40" height="50">
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+    <div class="snow-container">
+    <div class="snow foreground"></div>
+    <div class="snow foreground layered"></div>
+    <div class="snow middleground"></div>
+    <div class="snow middleground layered"></div>
+    <div class="snow background"></div>
+    <div class="snow background layered"></div>
+  </div>
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="190" height="180" class="star">
+    </svg>
+    <script src="./lib/L2Dwidget.min.js"></script>
+    <script type="text/javascript">
+      L2Dwidget
+        .on('*', (name) => {
+          console.log('%c EVENT ' + '%c -> ' + name, 'background: #222; color: yellow', 'background: #fff; color: #000')
+        })
+        .init({
+          dialog: {
+            // 开启对话框
+            enable: true,
+            script: {
+              // 每空闲 10 秒钟，显示一条一言
+              'every idle 10s': '$hitokoto$',
+              // 当触摸到角色身体
+              'tap body': '哎呀！Hentai！',
+              // 当触摸到角色头部
+              'tap face': '咕噜咕噜'
+            }
+          }
+        });
+    </script>
+  <p class="poweredby" style="text-align: center;color:grey;height:0% ;" align=center>powered by SakuraQWQ</p> 
+  <br><div id="timeShow" class="time1" style="color:red"></div>
 </body>
 </html>
-(获得随机颜色)
-<body>
- <script>
-  var bgColor=document.getElementById("bgColor");
-  bgColor.οnclick=function(){
-    document.body.style.background=getColor();
-  }
-
-   function getColor()
-   {
-      var colorArray =new Array("0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f");
-      var color="#";
-      for(var i=0;i<6;i++)
-	  {
-          color+=colorArray[Math.floor(Math.random()*16)];
-      }
-      return color;
-   }
-</script>
-</body>
