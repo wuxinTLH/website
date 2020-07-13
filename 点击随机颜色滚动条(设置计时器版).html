@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta author="桜">
+    <meta discription="一个成功的随机颜色展示">
+    <link rel="shortcut icon" href="sakura.png">
+    <title>Sakura的小屋o(*￣▽￣*)o</title>
+    <style>
+        .marquee {
+            position: absolute;
+            left: 40%;
+        }
+        
+        marquee {
+            width: 500px;
+            font-size: 30px;
+        }
+        
+        .beijing {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            min-width: 1000px;
+            z-index: -10;
+            zoom: 1;
+            background-color: #fff;
+            background: url(beijing1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -o-background-size: cover;
+            background-position: center 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="beijing"></div>
+    <input type="text" placeholder="请输入10字以内字符串">
+    <button>点击滚动</button>
+    <div class="marquee">
+        <marquee></marquee>
+    </div>
+    <script>
+        var input = document.querySelector('input');
+        var btn = document.querySelector('button');
+        var marquee = document.querySelector('marquee');
+        var value = input.value;
+        input.addEventListener('focus', function() {
+            if (this.value == '') {
+                this.placeholder = '';
+            }
+        })
+        input.addEventListener('blur', function() {
+            this.placeholder = '请输入十字以内字符串'
+        })
+
+        function spancolor() {
+            input = document.querySelector('input');
+            var value = input.value;
+            for (i = 0; i < value.length; i++) {
+                var span = document.createElement('span');
+                var r1 = parseInt(Math.random() * 256);
+                var r2 = parseInt(Math.random() * 256);
+                var r3 = parseInt(Math.random() * 256);
+                marquee.appendChild(span);
+                span.innerHTML = value[i];
+                span.style.color = 'rgba(' + r1 + ',' + r2 + ',' + r3 + ')'
+            }
+        }
+        btn.addEventListener('click', function() { //给予marquee初始
+            input = document.querySelector('input');
+            var value = input.value;
+            var font;
+            if (marquee.children.length == 0) {
+                spancolor();
+            } else {
+                marquee.innerHTML = '';
+                spancolor();
+            }
+        })
+        var t = null;
+        t = setTimeout(time, 500) //设置定时器
+
+        function time() { //随机颜色函数
+            clearTimeout(t); //清除定时器
+            span = document.querySelectorAll('span');
+            for (i = 0; i < span.length; i++) {
+                var r1 = parseInt(Math.random() * 256); //随机0~255
+                var r2 = parseInt(Math.random() * 256);
+                var r3 = parseInt(Math.random() * 256);
+                span[i].style.color = 'rgba(' + r1 + ',' + r2 + ',' + r3 + ')'; //颜色赋值
+            }
+            t = setTimeout(time, 500) //重置定时器
+        }
+    </script>
+</body>
+
+</html>
