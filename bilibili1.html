@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="sakura.png">
+    <title>B站现状</title>
+    <style>
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            min-width: 1000px;
+            z-index: -1000;
+            zoom: 1;
+            background-color: #fff;
+            background: url(images/2233-0.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -o-background-size: cover;
+            background-position: center 0;
+        }
+        
+        .head {
+            color: black;
+            font-size: 50px;
+        }
+        
+        .prepage {
+            font-size: 50px;
+            position: absolute;
+            left: 0px;
+            top: 480px;
+            background-color: rgba(255, 255, 255, .05);
+            user-select: none;
+            display: none;
+        }
+        
+        .nextpage {
+            font-size: 50px;
+            position: absolute;
+            right: 0px;
+            top: 480px;
+            background-color: rgba(255, 255, 255, .05);
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background"></div>
+    <div class="head" align=center>B站不得不承认的现状</div>
+    <span class="nextpage">→</span>
+    <span class="prepage">←</span>
+    <div class="main"></div>
+    <script>
+        var nextpage = document.querySelector('.nextpage');
+        var prepage = document.querySelector('.prepage');
+        var main = document.querySelector('.main');
+        var page = 1;
+        dic = {
+            '1': '<div style="color:red;posistion:relative;margin-left:300px;margin-top:200px;font-size:30px;"><strong>所以，是什么现状？<br/>PS:由于此次带“央视批有的‘大胃王’浪费粮食”的标签的视频下方评论区“人才济济”,所以我就想做这么一个东西</strong></div>',
+            '2': '<div style="color:red;posistion:relative;margin-left:300px;margin-top:200px;font-size:20px;background:rgb(255,255,255,.3);width:1200px">第一点:总有一些自以为是的人喜欢称别人为杠精,其实自己就是个杠精,死都不承认那种。<br/>这些人，自大，认为自己什么都是对的。即使是一个跟他对上一句话，就喜欢叫别人是杠精。<br/>举个我自己的例子,还在某群的时候,一个人因为自己买了mc黑号,然后就去说mc正版cdkey都是有问题的,我跟他讲道理,他又不会听,只会追着一个"我不管,反正我都是对的"的虚假理念进行一些不讲证据的反驳<br/>B站这些自以为是的杠精,也就只能留在所谓的“颅内高潮”之中,就算你去跟他讲事实,又有什么用?到最后,气的是自己,开心的是他,破站也不会管,任由他狂妄自大。</div>',
+            '3': '<div style="color:red;posistion:relative;margin-left:300px;margin-top:200px;font-size:20px;background:rgb(255,255,255,.3);width:1200px">第二点:偷换概念的人那是越来越多,甚至能获得大量的赞<br/>尤其是这次“央视批有的‘大胃王’浪费粮食”的视频,甚至在其他地方(当然这不止B站),评论区下面,总有这么一群人‘我都不明白吃播这种东西怎么能火’‘吃播就应该被禁止’等等。<br/>这种评论,不仅有大量点赞,还跟着一堆逢迎的评论<br/>我寻思,这就是所谓的,比外国人(指那些口罩含5g天线,新冠病毒是资本家的骗局之类的)更加“人上人”？<br/>大胃王吃播，只是吃播的一种,央视批有的“大胃王”,这些人就喜欢直接偷换概念,直指所有“吃播”,还能有人跟着逢迎,这就是所谓的“人上人”吗？<br/>令我气愤的当然不止这些,央视拿某些真的食量大的人放进视频就算了,某些新闻号就这么喜欢直接像个ZZ一样的报道吗？<a href="https://post.mp.qq.com/kan/article/1955231479-1228893893.html?_wv=2147483777&sig=6a5b71c6bf3afdb50c3135d70b7b7f76&article_id=1228893893&time=1597210923&_pflag=1&x5PreFetch=1&rowkey=3115f33808d84252&cc_media_type=10001&doc_id=70000021_3115f33808d84252&searchid=3_1392930618_1597212499100&from=dongtai_hotword&web_ch_id=0&keepShareUrl=1&s_id=n1bc56_kbnglh&share_source=8&openfrom=" target="_blank">链接</a>就比如这营销号一样的新闻,直接写着“点开视频之后，小编发现，这些“吃播”视频里面并不是尝鲜类内容，比如，录个视频跟大家介绍一下特色菜，而是“大胃王吃播”，同样的食物有一大盆，量大惊人。网红主播往往可以在30分钟之内把这些东西全部吃完。”,大祥哥是大胃王?评论区也是一堆“人上人”跟风评论,B站某部分人跟所谓的“类粪坑”有什么区别？<br/>吃播是招你惹你了?跟个“人上人”一样喜欢给所有“吃播”扣“大胃王”的帽子,还有一群也是“人上人”一样的人直接跟风。我直呼素质网民。</div>',
+            '4': '<div style="color:red;posistion:relative;margin-left:300px;margin-top:200px;font-size:20px;background:rgb(255,255,255,.3);width:1200px">第三点:评论区追着一个梗不放。<br/>本来我是对这个东西没什么太大厌恶的,后来,梗越刷越烂,在哪都可以刷这个梗,甚至不分场合刷梗。<br/>就类似于“男妈妈”“女爸爸”这类梗,有的up主在评论区说了不要刷这些梗,那表面TA不喜欢,有的人就喜欢刷,使劲刷,然后越来越多人讨厌起来,只是明面可能不说,内心直呼“NT”</div>',
+            '5': '<div style="color:red;posistion:relative;margin-left:300px;margin-top:200px;font-size:20px;background:rgb(255,255,255,.3);width:1200px">第四点:“钓鱼”。<br/>这个东西,哪个评论区都能看见,但是你就是不知道他是不是钓鱼,有的人可能喜欢加个狗头(doge)表示自己只是开个玩笑,有的人就直接硬钓,你去跟他对线,他有充分理由可以说自己忘加狗头,并不是钓鱼。实际上他就是在钓鱼,还喜欢骗人上钩。</div>',
+        };
+        main.innerHTML = dic[page];
+        nextpage.addEventListener('click', function() {
+            if (page == 1) {
+                prepage.style.display = 'block';
+            }
+            //
+            page = page + 1;
+            main.innerHTML = dic[page];
+            if (page >= 5) {
+                nextpage.style.display = 'none';
+                page = 5;
+            }
+        })
+        prepage.addEventListener('click', function() {
+            if (page == 5) {
+                nextpage.style.display = 'block';
+            }
+            page = page - 1;
+            main.innerHTML = dic[page];
+            if (page == 1) {
+                prepage.style.display = 'none';
+                page = 1;
+            }
+        })
+    </script>
+</body>
+
+</html>
